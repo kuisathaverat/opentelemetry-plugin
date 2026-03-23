@@ -118,9 +118,7 @@ public class MonitoringPipelineListener extends AbstractPipelineListener
                     .setParent(Context.current())
                     .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_TYPE, stepType)
                     .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_ID, stepStartNode.getId())
-                    .setAttribute(
-                            ExtendedJenkinsAttributes.JENKINS_STEP_NAME,
-                            ExtendedJenkinsAttributes.AGENT) // FIXME verify it's the right semantic and value
+                    .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_NAME, ExtendedJenkinsAttributes.AGENT)
                     .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_PLUGIN_NAME, stepPlugin.getName())
                     .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_PLUGIN_VERSION, stepPlugin.getVersion());
             if (agentLabel != null) {
@@ -147,9 +145,7 @@ public class MonitoringPipelineListener extends AbstractPipelineListener
                                         ExtendedJenkinsAttributes.STEP_NODE))
                         .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_ID, stepStartNode.getId())
                         .setAttribute(
-                                ExtendedJenkinsAttributes.JENKINS_STEP_NAME,
-                                ExtendedJenkinsAttributes
-                                        .AGENT_ALLOCATE) // FIXME verify it's the right semantic and value
+                                ExtendedJenkinsAttributes.JENKINS_STEP_NAME, ExtendedJenkinsAttributes.AGENT_ALLOCATE)
                         .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_PLUGIN_NAME, stepPlugin.getName())
                         .setAttribute(ExtendedJenkinsAttributes.JENKINS_STEP_PLUGIN_VERSION, stepPlugin.getVersion());
                 if (agentLabel != null) {

@@ -51,7 +51,6 @@ public class GitCheckoutStepHandler extends AbstractGitStepHandler {
         WorkflowJob pipeline = run.getParent();
         BranchJobProperty branchJobProperty = pipeline.getProperty(BranchJobProperty.class);
         if (branchJobProperty == null) {
-            // FIXME implement generic `checkout ...` step
             Map<String, Object> rootArguments = ArgumentsAction.getFilteredArguments(flowNode);
             Object scmAsObject = rootArguments.get("scm");
             if (scmAsObject == null) {
